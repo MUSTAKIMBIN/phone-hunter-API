@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phone hunter</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h2>Phone huntine</h2>
+      <h2>Phone huntine</h2>
     </header>
     <main class="container mx-auto mt-3">
-        <section>
-            <input id="serch-feld" type="text" placeholder="Secrch Here.." class="m-3 bg-gray-100 input input-bordered w-full max-w-xs" />
-            <button onclick="serchHandel()" class="btn btn-accent m-3">Serch</button>
-        </section>
-        <section>
-            <div id="loading-spinner" class="text-center my-10 hidden">
-                <span class="loading loading-spinner text-secondary"></span>
-            </div>
-        </section>
-        <section>
-            <div id="phene-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                
-            </div>
-            <div id="show-more-container" class="hidden">
-                <button class="btn btn-primary">Show More</button>
-            </div>
-        </section>
+      <section>
+        <input
+          id="serch-feld"
+          type="text"
+          placeholder="Secrch Here.."
+          class="m-3 bg-gray-100 input input-bordered w-full max-w-xs"
+        />
+        <button onclick="serchHandel()" class="btn btn-accent m-3">
+          Serch
+        </button>
+      </section>
+      <section>
+        <div id="loading-spinner" class="text-center my-10 hidden">
+          <span class="loading loading-spinner text-secondary"></span>
+        </div>
+      </section>
+      <section>
+        <div
+          id="phene-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        ></div>
+        <div id="show-more-container" class="hidden text-center my-8">
+          <button class="btn btn-primary">Show More</button>
+        </div>
+      </section>
 
+      <!-- show detel modal  -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="show_detel_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="show-detel-container" class="p-6">
+            
+             
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <script src="/js/phone.js"></script>
-</body>
+  </body>
 </html>
