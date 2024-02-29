@@ -10,6 +10,13 @@ const lodePhone = async (serchText) => {
 const displayPhone = (phones) => {
   const phoneContainer = document.getElementById("phene-container");
   phoneContainer.textContent = "";
+  const showAllContainer = document.getElementById("show-more-container");
+  if (phones.length > 12) {
+    showAllContainer.classList.remove("hidden");
+  } else {
+    showAllContainer.classList.add("hidden");
+  }
+  phones = phones.slice(0, 12);
   phones.forEach((phone) => {
     console.log(phone);
     const phoneCard = document.createElement("div");
@@ -26,13 +33,22 @@ const displayPhone = (phones) => {
         `;
     phoneContainer.appendChild(phoneCard);
   });
+  loddingSpinner(false)
 };
 // handel serch
 const serchHandel = () => {
+    loddingSpinner(true)
   const serchFeld = document.getElementById("serch-feld");
   const serchFeldText = serchFeld.value;
-  console.log(serchFeldText);
   lodePhone(serchFeldText);
 };
+const loddingSpinner = (isLodding) => {
+    const loddingSpinner = document.getElementById("loading-spinner")
+    if(isLodding){
+        loddingSpinner.classList.remove("hidden")
+    }else{
+        loddingSpinner.classList.add("hidden")
+    }
+}
 
 lodePhone();
